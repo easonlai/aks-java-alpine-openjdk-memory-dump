@@ -2,7 +2,7 @@
 
 Special tricks to take Java memory dump from [Alpine](https://hub.docker.com/_/alpine) (e.g. [OpenJDK-Alpine](https://hub.docker.com/_/openjdk)) based container which running in [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes). By adding [Tini](https://github.com/krallin/tini) as init of container, otherwise Java process in Alpine would be using PID 1 and would make "Unable to get pid of LinuxThreads manager thread" error when taking Java memory dump (same to [jcmd](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr006.html), [jstack](https://docs.oracle.com/en/java/javase/13/docs/specs/man/jstack.html)).
 
-* Dockerfile <-- Sample Dockerfile with Tini, it's using openjdk:8-jdk-alpine.
+* Dockerfile <-- Sample Dockerfile with Tini, it's using [openjdk:8-jdk-alpine](https://hub.docker.com/layers/openjdk/library/openjdk/8-jdk-alpine/images/sha256-210ecd2595991799526a62a7099718b149e3bbefdb49764cc2a450048e0dd4c0?context=explore).
 * [Containerized App sample in Java Springboot](https://github.com/easonlai/serving-web-content-demo)
 
 Get list of POD running in AKS.
