@@ -28,7 +28,7 @@ jmap -dump:format=b,file=snapshot.jmap 1
 exit
 ```
 
-Start to take memory dump.
+Copy out memory dump from container to your development machine.
 ```shell
 kubectl cp your-java-app-pod-name:tmp/snapshot.jmap snapshot.jmap -n your-pod-namespace
 ```
